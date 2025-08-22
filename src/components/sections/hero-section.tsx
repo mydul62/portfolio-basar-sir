@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Github, Linkedin, Mail, ExternalLink } from "lucide-react"
 import Image from "next/image"
+import Link from "next/link"
 
 export function HeroSection() {
   return (
@@ -10,20 +11,20 @@ export function HeroSection() {
         <div className="flex flex-col lg:flex-row items-center gap-12">
           <div className="flex-1 space-y-6">
             <div className="space-y-4">
-              <h1 className="text-4xl lg:text-6xl font-bold text-foreground font-sans">Samrat Kumar Dey</h1>
+              <h1 className="text-4xl lg:text-6xl font-bold text-foreground font-sans">Md. Abul Basar</h1>
               <p className="text-xl text-primary font-medium">Teaching Professional | Researcher | Explorer</p>
               <p className="text-lg text-muted-foreground font-serif leading-relaxed max-w-2xl">
-                PhD in Informatics with specialization in Medical Informatics at the University of Missouri-Columbia.
-                Graduate Research Assistant at MU Institute for Data Science and Informatics, passionate about machine
-                learning in healthcare and artificial intelligence applications.
+              Aspiring academic in computer science and data science, seeking a fully funded PhD to advance research in health informatics and machine learning while contributing to academic excellence.
               </p>
             </div>
 
             <div className="flex flex-wrap gap-4">
-              <Button size="lg" className="font-medium">
-                <Mail className="w-4 h-4 mr-2" />
-                Contact Me
-              </Button>
+              <Link href="https://wa.me/8801758443472" target="_blank">
+      <Button size="lg" className="font-medium">
+        <Mail className="w-4 h-4 mr-2" />
+        Contact Me
+      </Button>
+    </Link>
               <Button variant="outline" size="lg" className="font-medium bg-transparent">
                 <ExternalLink className="w-4 h-4 mr-2" />
                 View Research

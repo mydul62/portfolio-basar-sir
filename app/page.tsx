@@ -30,9 +30,9 @@ export default function HomePage() {
       <footer className="bg-muted/30 border-t border-border py-12 md:ml-64">
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="text-center space-y-4">
-            <h3 className="text-lg font-semibold text-foreground font-sans">Samrat Kumar Dey</h3>
+            <h3 className="text-lg font-semibold text-foreground font-sans">Md. Abul Basary</h3>
             <p className="text-muted-foreground font-serif">Teaching Professional | Researcher | Explorer</p>
-            <p className="text-sm text-muted-foreground">© 2024 Samrat Kumar Dey. Built with Next.js and Shadcn UI.</p>
+            <p className="text-sm text-muted-foreground">© 2024 Md. Abul Basar. </p>
           </div>
         </div>
       </footer>

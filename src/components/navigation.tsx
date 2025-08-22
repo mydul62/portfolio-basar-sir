@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation"
 import { cn } from "@/lib/utils"
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
+import { ThemeToggle } from "@/src/components/ui/theme-toggle"
 import {
   Menu,
   X,
@@ -21,13 +22,13 @@ import {
 } from "lucide-react"
 
 const navItems = [
-  { href: "/", label: "Home", icon: Home },
+  { href: "/#", label: "Home", icon: Home },
   { href: "/#about", label: "About", icon: User },
-  { href: "/projects", label: "Projects", icon: FolderOpen },
-  { href: "/publications", label: "Publications", icon: BookOpen },
-  { href: "/awards", label: "Awards", icon: Trophy },
-  { href: "/networks", label: "Networks", icon: Users },
-  { href: "/grants", label: "Grants", icon: DollarSign },
+  { href: "/#projects", label: "Projects", icon: FolderOpen },
+  { href: "/#publications", label: "Publications", icon: BookOpen },
+  { href: "/#awards", label: "Awards", icon: Trophy },
+  { href: "/#networks", label: "Networks", icon: Users },
+  { href: "/#grants", label: "Grants", icon: DollarSign },
   { href: "/#blog", label: "Blog", icon: PenTool },
   { href: "/#contact", label: "Contact", icon: Mail },
   { href: "/dashboard", label: "Dashboard", icon: LayoutDashboard },
@@ -37,15 +38,17 @@ export function Navigation() {
   const pathname = usePathname()
   const [isSidebarOpen, setIsSidebarOpen] = useState(false)
 
-  const handleAnchorClick = (href: string) => {
-    if (href.startsWith("/#")) {
-      const element = document.querySelector(href.substring(1))
-      if (element) {
-        element.scrollIntoView({ behavior: "smooth" })
-      }
+const handleAnchorClick = (href: string) => {
+  if (href.startsWith("/#")) {
+    const id = href.split("#")[1] // "/#about" -> "about"
+    const element = document.getElementById(id)
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" })
     }
-    setIsSidebarOpen(false)
   }
+  setIsSidebarOpen(false)
+}
+
 
   return (
     <>
@@ -69,16 +72,16 @@ export function Navigation() {
           isSidebarOpen ? "translate-x-0" : "-translate-x-full", // Mobile toggle
         )}
       >
-        <div className="p-6">
+        <div className="p-6 flex flex-col h-full">
           <Link
             href="/"
             className="block font-bold text-xl text-primary mb-8 font-sans"
             onClick={() => setIsSidebarOpen(false)}
           >
-            Samrat Kumar Dey
+            Md. Abul Basar
           </Link>
 
-          <div className="space-y-2">
+          <div className="space-y-2 flex-1">
             {navItems.map((item) => {
               const Icon = item.icon
               return (
@@ -96,6 +99,13 @@ export function Navigation() {
                 </Link>
               )
             })}
+          </div>
+
+          <div className="mt-auto pt-4 border-t border-border">
+            <div className="flex items-center justify-between">
+              <span className="text-sm text-muted-foreground">Theme</span>
+              <ThemeToggle />
+            </div>
           </div>
         </div>
       </nav>

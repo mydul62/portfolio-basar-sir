@@ -68,7 +68,7 @@ export function DashboardSidebar() {
           </div>
           <div className="flex-1">
             <h2 className="font-semibold text-sidebar-foreground">Dashboard</h2>
-            <p className="text-xs text-sidebar-foreground/60">Samrat Kumar Dey</p>
+            <p className="text-xs text-sidebar-foreground/60">Md. Abul Basar</p>
           </div>
         </div>
       </SidebarHeader>
